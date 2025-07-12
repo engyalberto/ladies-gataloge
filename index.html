@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ALBERTO Catalogue</title>
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+#flipbook {
+    width: 1000px;
+    height: 700px;
+    margin: 20px auto;
+    max-width: 95%;
+}
+#flipbook > div {
+    width: 100%;
+    height: 100%;
+}
+.catalog-content {
+    overflow-y: auto;
+    height: 100%;
+}
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px auto;
+    max-width: 1000px;
+    gap: 10px;
+}
+.button {
+    width: 30%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+}
+.button > img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.button > img:hover {
+    transform: scale(1.05);
+}
+.circle-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
+}
+.circle-buttons .row {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+.circle-buttons button {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #333;
+    background-color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 12px;
+    transition: background-color 0.2s;
+}
+.circle-buttons button:hover {
+    background-color: #eee;
+}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/3/turn.min.js"></script>
+</head>
+<body>
+
+<div id="flipbook">
+
+    <!-- Page 1: Cover -->
+    <div><img src="cover.jpg" alt="Cover" style="width:100%;height:100%;"></div>
+
+    <!-- Page 2: Full Catalog content -->
+    <div class="catalog-content">
+        <img src="line.jpeg" alt="Line" style="width:100%;margin:10px auto;">
+        <img src="logo.jpeg" alt="Logo" style="width:50%;margin:10px auto;display:block;">
+        <div class="buttons">
+
+            <!-- Mom Fit -->
+            <div class="button">
+                <img src="momfit.jpg" alt="Mom Fit">
+                <div class="circle-buttons">
+                    <div class="row">
+                        <button onclick="goToMomFit()">30</button>
+                        <button onclick="goToMomFit()">32</button>
+                        <button onclick="goToMomFit()">34</button>
+                        <button onclick="goToMomFit()">36</button>
+                        <button onclick="goToMomFit()">38</button>
+                    </div>
+                    <div class="row">
+                        <button>40</button><button>42</button><button>44</button><button>46</button><button>48</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- باقي الموديلات -->
+            <div class="button">
+                <img src="cargo.jpg" alt="Cargo">
+                <div class="circle-buttons">
+                    <div class="row">
+                        <button>30</button><button>32</button><button>34</button><button>36</button><button>38</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="button">
+                <img src="balloonfit.jpg" alt="Balloon Fit">
+                <div class="circle-buttons">
+                    <div class="row">
+                        <button>30</button><button>32</button><button>34</button><button>36</button><button>38</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="button">
+                <img src="charlton.jpg" alt="Charlton">
+                <div class="circle-buttons">
+                    <div class="row">
+                        <button>30</button><button>32</button><button>34</button><button>36</button><button>38</button>
+                    </div>
+                    <div class="row">
+                        <button>40</button><button>42</button><button>44</button><button>46</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="button">
+                <img src="classic.jpg" alt="Classic">
+                <div class="circle-buttons">
+                    <div class="row">
+                        <button>30</button><button>32</button><button>34</button><button>36</button><button>38</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="button">
+                <img src="skinny.jpg" alt="Skinny">
+                <div class="circle-buttons">
+                    <div class="row">
+                        <button>30</button><button>32</button><button>34</button><button>36</button><button>38</button>
+                    </div>
+                    <div class="row">
+                        <button>40</button><button>42</button><button>44</button><button>46</button><button>48</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="button">
+                <img src="skirt.jpg" alt="Skirt">
+                <div class="circle-buttons">
+                    <div class="row">
+                        <button>S</button><button>M</button><button>L</button><button>XL</button><button>2XL</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="button">
+                <img src="straightleg.jpg" alt="Straight Leg">
+                <div class="circle-buttons">
+                    <div class="row">
+                        <button>30</button><button>32</button><button>34</button><button>36</button><button>38</button>
+                    </div>
+                    <div class="row">
+                        <button>40</button><button>42</button><button>44</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="button">
+                <img src="wideleg.jpg" alt="Wide Leg">
+                <div class="circle-buttons">
+                    <div class="row">
+                        <button>30</button><button>32</button><button>34</button><button>36</button><button>38</button>
+                    </div>
+                    <div class="row">
+                        <button>40</button><button>42</button><button>44</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <img src="line.jpeg" alt="Line" style="width:100%;margin:10px auto;">
+    </div>
+
+</div>
+
+<!-- صفحات Mom Fit مخفية -->
+<div class="momfit-pages" style="display:none">
+    <div><img src="mf30-001.jpg" alt="" style="width:100%;height:100%;"></div>
+    <div><img src="mf30-002.jpg" alt="" style="width:100%;height:100%;"></div>
+    <div><img src="mf30-003.jpg" alt="" style="width:100%;height:100%;"></div>
+    <div><img src="mf30-0017.jpg" alt="" style="width:100%;height:100%;"></div>
+</div>
+
+<script>
+$('#flipbook').turn({
+    width: 1000,
+    height: 700,
+    autoCenter: true
+});
+
+function goToMomFit() {
+    // لو الصفحات مش موجودة أضفهم
+    if (!$('.momfit-pages-added').length) {
+        $('.momfit-pages div').each(function(){
+            $('#flipbook').turn('addPage', $(this), $('#flipbook').turn('pages')+1);
+        });
+        $('.momfit-pages').addClass('momfit-pages-added');
+    }
+
+    // اروح لأول صفحة Mom Fit
+    $('#flipbook').turn('page', $('#flipbook').turn('pages') - 3);
+}
+</script>
+
+</body>
+</html>
